@@ -1,3 +1,10 @@
+Notes
+======
+
+* This is a fork of [jfrux/eon-neos-builder][https://github.com/jfrux/eon-neos-builder] modified to run in docker container on a mac. Note that this process may work on other OSes with a few tweaks, but it has not been tested.
+
+* The docker image is an adaptation of [ziozzang/android-kernel-builder-docker][https://github.com/ziozzang/android-kernel-builder-docker]
+
 NEOS Builder
 ======
 
@@ -10,11 +17,24 @@ What is it?
 * A minified version of Android
 * Userspace from termux
 
+Prerequisites
+-----
+
+* Manage your expectations! Building Android from source takes hours to complete.
+* macOS (Tested on Mojave 10.14.5)
+* 200GB of free space
+* git
+** You need to be setup to clone from github over ssh
+** Your private key should be at ~/.ssh/id_rsa
+** Do not use a passphrase with your key. I tried this and couldn't make it work
+* make (optional, but makes life easier)
+
 Usage
 ------
 
- ./build_all.sh
- ./flash_oneplus.sh   # change to leeco if appropriate
+ make setup (first time only)
+ make build-all
+ ./builder/flash_oneplus.sh   # change to leeco if appropriate
 
 Supported Phones
 ------
