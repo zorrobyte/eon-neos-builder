@@ -33,6 +33,7 @@ Usage
 ------
 
  make setup (first time only)
+ (cd to /Volumes/android/eon-neos-builder for the commands below)
  make build-all
  ./builder/flash_oneplus.sh   # change to leeco if appropriate
 

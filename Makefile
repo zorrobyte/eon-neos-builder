@@ -1,7 +1,10 @@
-.PHONY: setup build-all help
+.PHONY: setup-env destroy-env build-all build-android help
 
-setup: ## build or rebuild the docker image
-	./utils/setup.sh
+setup-env: ## Set up build environment for mac
+	./utils/setup_env.sh
+
+destroy-env: ## Tear down and delete the build environment
+	./utils/destroy_env.sh
 
 build-all: ## build mindroid (minimal android), kernels, and images
 	./utils/run_in_docker.sh "build_all.sh"
