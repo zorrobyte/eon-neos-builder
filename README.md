@@ -1,16 +1,13 @@
-Notes
+NEOS Builder
 ======
+
+This is the tool to build the operating system for your [EON Dashcam Development Kit](https://shop.comma.ai/products/eon-dashcam-devkit)
 
 * This is a fork of [jfrux/eon-neos-builder](https://github.com/jfrux/eon-neos-builder) modified to run in a docker container on a mac. Note that this process may work on other OSes with a few tweaks, but it has not been tested.
 
 * The docker image is an adaptation of [ziozzang/android-kernel-builder-docker](https://github.com/ziozzang/android-kernel-builder-docker)
 
 * The goal of this fork is to develop EON NEOS roms for other devices
-
-NEOS Builder
-======
-
-This is the tool to build the operating system for your [EON Dashcam Development Kit](https://shop.comma.ai/products/eon-dashcam-devkit)
 
 What is it?
 ------
