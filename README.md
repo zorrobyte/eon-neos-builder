@@ -37,9 +37,11 @@ Prerequisites
 Usage
 ------
 
- 1. make setup (first time only)
+ 1. make setup-env (first time only)
  2. make build-all. I had to restart this process several times due to errors, but it always seemed to pick up where it left off
  3. ./builder/flash_oneplus.sh   # change to leeco if appropriate
+ 4. make destroy-env
+   * optional if you want to recover your disk space after you're done
 
 Supported Phones
 ------
