@@ -20,7 +20,8 @@ What is it?
 Prerequisites
 -----
 
-* Manage your expectations! Building Android from source takes hours to complete.
+* Manage your expectations! Building Android from source takes hours to complete. It took me around 24 hours
+* This is an experimental repo and should be considered as such. ie. I am not responsible if you brick your phone
 * macOS (Tested on Mojave 10.14.5)
 * 200GB of free space
 * git
@@ -32,10 +33,10 @@ Prerequisites
 Usage
 ------
 
- make setup (first time only)
- (cd to /Volumes/android/eon-neos-builder for the commands below)
- make build-all
- ./builder/flash_oneplus.sh   # change to leeco if appropriate
+ 1. make setup (first time only)
+ 2. cd to /Volumes/android/eon-neos-builder
+ 3. make build-all. I had to restart this process several times due to errors, but it always seemed to pick up where it left off
+ 4. ./builder/flash_oneplus.sh   # change to leeco if appropriate
 
 Supported Phones
 ------
