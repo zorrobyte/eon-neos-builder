@@ -32,7 +32,7 @@ Prerequisites
   * You need to be setup to clone from github over ssh
   * Your private key should be at ~/.ssh/id_rsa
   * Do not use a passphrase with your key. I tried this and couldn't make it work
-* make (optional, but makes life easier)
+* make - _optional, but makes life easier_
 
 Usage
 ------
@@ -40,8 +40,7 @@ Usage
  1. make setup-env (first time only)
  2. make build-all. I had to restart this process several times due to errors, but it always seemed to pick up where it left off
  3. ./builder/flash_oneplus.sh   # change to leeco if appropriate
- 4. make destroy-env
-   * optional if you want to recover your disk space after you're done
+ 4. make destroy-env - _optional if you want to recover your disk space after you're done_
 
 Supported Phones
 ------
