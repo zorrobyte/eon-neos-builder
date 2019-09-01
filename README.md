@@ -1,9 +1,11 @@
 Notes
 ======
 
-* This is a fork of [jfrux/eon-neos-builder](https://github.com/jfrux/eon-neos-builder) modified to run in docker container on a mac. Note that this process may work on other OSes with a few tweaks, but it has not been tested.
+* This is a fork of [jfrux/eon-neos-builder](https://github.com/jfrux/eon-neos-builder) modified to run in a docker container on a mac. Note that this process may work on other OSes with a few tweaks, but it has not been tested.
 
 * The docker image is an adaptation of [ziozzang/android-kernel-builder-docker](https://github.com/ziozzang/android-kernel-builder-docker)
+
+* The goal of this fork is to develop EON NEOS roms for other devices
 
 NEOS Builder
 ======
@@ -36,9 +38,8 @@ Usage
 ------
 
  1. make setup (first time only)
- 2. cd to /Volumes/android/eon-neos-builder
- 3. make build-all. I had to restart this process several times due to errors, but it always seemed to pick up where it left off
- 4. ./builder/flash_oneplus.sh   # change to leeco if appropriate
+ 2. make build-all. I had to restart this process several times due to errors, but it always seemed to pick up where it left off
+ 3. ./builder/flash_oneplus.sh   # change to leeco if appropriate
 
 Supported Phones
 ------
