@@ -25,6 +25,8 @@ Prerequisites
   * **I am not responsible if you brick your phone**
 * macOS (Tested on Mojave 10.14.5)
 * 200GB of free space
+* Docker
+  * Need at least 8GB of RAM allocated to Docker
 * git
   * You need to be setup to clone from github over ssh
   * Your private key should be at ~/.ssh/id_rsa
@@ -43,6 +45,7 @@ Supported Phones
 ------
 * Oneplus 3T
 * LePro 3
+* Hopefully more coming soon
 
 What works
 -----

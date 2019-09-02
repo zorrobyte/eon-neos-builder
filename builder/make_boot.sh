@@ -17,11 +17,11 @@ pushd build
     abootimg -x "$FIRMWARE_DIR"/mindroid/system/out/target/product/oneplus3/boot.img
 
     # extract ramdisk
-    sudo rm -rf ramdisk
+    rm -rf ramdisk
     mkdir -p ramdisk
 
     pushd ramdisk
-      gunzip -c ../initrd.img | sudo cpio -i
+      gunzip -c ../initrd.img | cpio -i
 
       echo "running populate ramdisk"
 
@@ -30,13 +30,13 @@ pushd build
       ln -s /data/data/com.termux/files/home home
       ln -s /data/data/com.termux/files/tmp tmp
       ln -s /data/data/com.termux/files/usr usr
-      sudo cp -v "$FIRMWARE_DIR"/ramdisk_common/* .
+      cp -v "$FIRMWARE_DIR"/ramdisk_common/* .
       echo "7" > VERSION
       touch EON
 
       # repack ramdisk
       rm -f ../initrd_new.img.gz
-      sudo find . | sudo cpio -o -H newc -O ../initrd_new.img
+      find . | cpio -o -H newc -O ../initrd_new.img
       gzip ../initrd_new.img
     popd
 
@@ -52,7 +52,7 @@ pushd build
     abootimg --create ../bootnew.img.nonsecure -f "$FIRMWARE_DIR"/bootimg.cfg -k zImage -r initrd_new.img.gz
   popd
 
-  sudo rm -rf boot
+  rm -rf boot
 
   # sign bootimg (stage 1)
   java -Xmx512M -jar ../tools/BootSignature.jar /boot bootnew.img.nonsecure "$FIRMWARE_DIR"/keys/verity.pk8 "$FIRMWARE_DIR"/keys/verity.x509.pem bootnew.img.nonsecure
