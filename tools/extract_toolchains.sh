@@ -19,13 +19,16 @@ GOOGLE_GCC_4_9=aarch64-linux-android-4.9
 GOOGLE_GCC_4_8_32BIT=arm-eabi-4.8
 SNAPDRAGON_LLVM=snapdragon-llvm-6.0.2-linux64
 
-if [ ! -f $LINARO_GCC_PREFIX*.xz ] || \
-   [ ! -f $GOOGLE_GCC_4_9*.gz ] || \
-   [ ! -f $GOOGLE_GCC_4_8_32BIT*.gz ]; then
-  cd $ROOT
-  git lfs install
-  git lfs pull
-  cd $DIR
+if [ ! -f $LINARO_GCC_PREFIX*.xz ]; then
+    wget https://developer.arm.com/-/media/Files/downloads/gnu-a/8.2-2018.08/gcc-arm-8.2-2018.08-x86_64-aarch64-linux-gnu.tar.xz?revision=51f15dd6-02e2-4565-8619-12f29ff59ee7&ln=en
+fi
+
+if [ ! -f $GOOGLE_GCC_4_9*.gz ]; then
+    wget https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+archive/master.tar.gz
+fi
+
+if [ ! -f $GOOGLE_GCC_4_8_32BIT*.gz ]; then
+    wget https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/+archive/master.tar.gz
 fi
 
 if [ ! -f $SNAPDRAGON_LLVM*.gz ]; then

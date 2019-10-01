@@ -14,13 +14,13 @@ mkdir -p $OUT
 # Bake in NEOS
 cd $DIR/mindroid
 if [ ! -d usr ]; then
-  git clone https://github.com/commaai/usr.git --depth 1
+  git clone git://github.com/commaai/usr.git --depth 1
 fi
 cd usr
 git pull
 cd ..
 
-$TOOLS/simg2img $DIR/mindroid/system/out/target/product/oneplus3/system.img system.img.raw
+$TOOLS/simg2img $DIR/mindroid/out/target/product/oneplus3/system.img system.img.raw
 mkdir -p mnt
 sudo mount -o loop system.img.raw mnt
 sudo mkdir -p mnt/comma

@@ -3,7 +3,7 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
 cd "$DIR"
 
-BOOT_RAMDISK="mindroid/system/out/target/product/oneplus3/ramdisk.img"
+BOOT_RAMDISK="mindroid/out/target/product/oneplus3/ramdisk.img"
 [ ! -f $BOOT_RAMDISK ] && ./build_android.sh
 
 # extract ramdisk
