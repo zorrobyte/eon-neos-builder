@@ -1,33 +1,35 @@
-.PHONY: setup-env destroy-env create-volume mount-volume unmount-volume delete-volume clone-builder-repo build-docker-image delete-docker-image build-neos help
-BRANCH=master
+.PHONY: setup-env destroy-env create-volume mount-volume unmount-volume delete-volume copy-files-to-volume build-docker-image delete-docker-image build-all help
 
-setup-env: create-volume mount-volume clone-builder-repo build-docker-image ## Set up build environment for mac
+setup-env: create-volume mount-volume copy-files-to-volume build-docker-image ## Set up build environment for mac
 
 destroy-env: unmount-volume delete-volume ## Tear down and delete the build environment
 
-create-volume: ## Create a case-sensitive volume for building Android
+create-volume: ## Create a case-sensitive volume for building NEOS
 	./utils.sh create-volume
 
-mount-volume: ## Mount the Android volume
+mount-volume: ## Mount the neos volume
 	./utils.sh mount-volume
 
-unmount-volume: ## Unmount the Android volume
+unmount-volume: ## Unmount the neos volume
 	./utils.sh unmount-volume
 
-delete-volume: ## Delete the Android volume
-	rm ~/android.dmg.sparseimage
+delete-volume: ## Delete the neos volume
+	rm ~/neos.dmg.sparseimage
 
-clone-builder-repo: ## Clone this repo in the Android volume
-	./utils.sh clone-repo $(BRANCH)
+copy-files-to-volume: ## Copy the files in this directory to the neos volume
+	./utils.sh copy-build-files-to-volume
 
 build-docker-image: ## Build the docker image
-	docker build -t stecky/eon-neos-builder ./docker
+	docker build -t stecky/eon-neos-builder .
 
 delete-docker-image: ## Delete the docker image
 	docker rmi stecky/eon-neos-builder
 
-build-neos: ## Build mindroid (minimal android), kernels, and images
+build-all: ## Build mindroid (minimal android), kernels, and images
 	./utils.sh run-in-docker build_all.sh
+
+shell:
+	./utils.sh run-in-docker
 
 help: ## show this help info
 	@IFS=$$'\n' ; \
