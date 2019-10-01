@@ -24,12 +24,12 @@ Changes from the original
 * Modified sync command to only do a shallow clone of the repos (this speeds up the sync process considerably)
 * Added a step to build the NEOSSetup apk
 
-### Prerequisite
+### Prerequisites
 
 * This is an experimental repo and should be considered as such.
   * **I am not responsible if you brick your phone**
 * Manage your expectations! 
-  * Building Android from source takes many hours to complete (it took over 57 hours on my machine).
+  * Building Android from source takes many hours to complete (it took nearly 70 hours on my machine).
 * macOS (Tested on Mojave 10.14.6)
 * 200GB of free space
 * [Docker](https://docs.docker.com/docker-for-mac/install/)
